@@ -1,2 +1,2 @@
-#TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
-Release|x64|C:\Users\Kevin\Desktop\TA_v3\Rendering_Framework\|
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.28.29333:TargetPlatformVersion=10.0.18362.0:
+Release|x64|C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\|
