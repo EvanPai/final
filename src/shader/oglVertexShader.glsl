@@ -101,6 +101,14 @@ void blinnPhong() {
 
 void terrainProcess(){
 	vec4 worldV = modelMat * vec4(v_vertex, 1.0) ;
+
+	mat4 mv_matrix = viewMat * modelMat;
+	vec4 P = mv_matrix * vec4(v_vertex, 1.0);
+
+	vs_out.N = mat3(mv_matrix) * v_normal;
+	vs_out.L = light_pos - P.xyz;
+	vs_out.V = -P.xyz;
+
 	// calculate uv
 	vec4 uv = terrainVToUVMat * worldV ;
 	uv.y = uv.z ;
@@ -127,6 +135,7 @@ void main(){
 		commonProcess() ;
 	}
 	else if(vertexProcessIdx == 3){
+		//blinnPhong();
 		terrainProcess() ;
 	}
 	else if (vertexProcessIdx == 10) { //draw airplane
@@ -142,7 +151,7 @@ void main(){
 		blinnPhong();
 		grass_building_process();
 	}
-	else{
-		grass_building_process();
-	}	
+	//else{
+		//grass_building_process();
+	//}	
 }

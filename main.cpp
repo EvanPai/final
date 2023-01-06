@@ -497,6 +497,7 @@ void initAirplane() {
 
 
 	//texture
+	/*
 	texture_data tdata = loadImg("assets/Airplane_smooth_DefaultMaterial_BaseMap.jpg");
 	glGenTextures(1, &airplane_texture);
 	glActiveTexture(GL_TEXTURE10);
@@ -506,6 +507,7 @@ void initAirplane() {
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	*/
 	cout << "init airplane\n";
 }
 
@@ -516,12 +518,13 @@ void renderAirplane(mat4 airplaneModelMat) {
 	glUniform1i(SceneManager::Instance()->m_fs_pixelProcessIdHandle, 10);
 	glUniform1i(SceneManager::Instance()->m_vs_vertexProcessIdHandle, 10);
 
-	glActiveTexture(GL_TEXTURE10);
-	glBindTexture(GL_TEXTURE_2D, airplane_texture);
+	//glActiveTexture(GL_TEXTURE10);
+	//glBindTexture(GL_TEXTURE_2D, airplane_texture);
 
 	glBindVertexArray(airplane_vao);
 	//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, slime_ebo);
 	glDrawElements(GL_TRIANGLES, airplane_idx, GL_UNSIGNED_INT, 0);
+	glBindVertexArray(0);
 }
 
 int rock_idx;
@@ -566,6 +569,7 @@ void initRock() {
 
 
 	//texture
+	/*
 	texture_data tdata = loadImg("assets/MagicRock/StylMagicRocks_AlbedoTransparency.png");
 	glGenTextures(1, &rock_texture);
 	glActiveTexture(GL_TEXTURE11);
@@ -575,6 +579,7 @@ void initRock() {
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	*/
 	cout << "init rock\n";
 }
 
@@ -590,11 +595,12 @@ void renderRock() {
 	glUniform1i(SceneManager::Instance()->m_fs_pixelProcessIdHandle, 11);
 	glUniform1i(SceneManager::Instance()->m_vs_vertexProcessIdHandle, 11);
 
-	glActiveTexture(GL_TEXTURE11);
-	glBindTexture(GL_TEXTURE_2D, rock_texture);
+	//glActiveTexture(GL_TEXTURE11);
+	//glBindTexture(GL_TEXTURE_2D, rock_texture);
 
 	glBindVertexArray(rock_vao);
 	glDrawElements(GL_TRIANGLES, rock_idx, GL_UNSIGNED_INT, 0);
+	glBindVertexArray(0);
 }
 
 void initTexture() {
@@ -1138,17 +1144,19 @@ void paintGL(){
 
 	// update geography
 	m_terrain->updateState(playerVM, playerViewOrg, playerProjMat, nullptr);
+	
+	// start rendering
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplGlfw_NewFrame();
+	ImGui::NewFrame();
+	
 	// =============================================
 	// compute shader	
 	mat4 view_projection_matrix = playerProjMat * playerVM;
 	activeComputeShader(view_projection_matrix);
 
 	// =============================================
-	// start rendering
-	ImGui_ImplOpenGL3_NewFrame();
-	ImGui_ImplGlfw_NewFrame();
-	ImGui::NewFrame();
-	
+
 	// start new frame
 	defaultRenderer->setViewport(0, 0, FRAME_WIDTH, FRAME_HEIGHT);
 	defaultRenderer->startNewFrame();
@@ -1267,7 +1275,8 @@ void resize(const int w, const int h) {
 
 	m_myCameraManager->resize(w, h);
 	defaultRenderer->resize(w, h);
-	updateWhenPlayerProjectionChanged(0.1, m_myCameraManager->playerCameraFar());
+	updateWhenPlayerProjectionChanged(0.1, m_myCameraManager->playerCameraFar()); //¹w³]far¬O400
+	//updateWhenPlayerProjectionChanged(0.1, 50.0);
 }
 void viewFrustumMultiClipCorner(const std::vector<float> &depths, const glm::mat4 &viewMat, const glm::mat4 &projMat, float *clipCorner) {
 	const int NUM_CLIP = depths.size();

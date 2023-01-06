@@ -33,17 +33,23 @@ vec4 blinnPhong(vec4 texel, vec3 ka, vec3 kd, vec3 ks, float shininess) {
 	vec3 V = normalize(fs_in.V);
 	vec3 H = normalize(L + V); //halfway
 	//ambient
-	outColor += la * vec4(ka, 1.0);
+	outColor += la * vec4(ka, 1.0) + la * texel;
 
 	//diffuse
 	//outColor += white_Id * vec4(kd, 1.0) + max(dot(N, L), 0.0);
-	outColor += max(dot(N, L), 0.0) * texel * ld;
+	outColor += max(dot(N, L), 0.0) * texel * ld; 
 
 	//specular
 	float spec = pow(max(dot(N, H), 0.0), shininess);
 	outColor += ls * vec4(ks, 1.0) * spec + ls * texel * spec;
 
 	return outColor;
+}
+
+vec4 gammaCorrection(vec4 color) {
+	color.rgb = pow(color.rgb, vec3(0.5));
+	color.a = color.a;
+	return color;
 }
 
 vec4 withFog(vec4 color){
@@ -62,9 +68,20 @@ vec4 withFog(vec4 color){
 
 
 void terrainPass(){
-	vec4 texel = texture(albedoTexture, f_uv.xy) ;
-	fragColor = withFog(texel); 
-	fragColor.a = 1.0;	
+	vec4 texel = texture(albedoTexture, f_uv.xy);
+	vec4 color;
+	//fragColor = withFog(texel); 
+	color.a = 1.0;	
+
+	vec3 ka = texel.xyz;
+	vec3 kd = texel.xyz;
+	vec3 ks = vec3(0.0, 0.0, 0.0);
+	float shininess = 1.0;
+
+	color = blinnPhong(texel, ka, kd, ks, shininess); // texel改成用texture取來就會是正常的blinn phong
+	color = withFog(color);
+	color = gammaCorrection(color);
+	fragColor = color;
 }
 
 void pureColor(){
@@ -77,6 +94,8 @@ void main(){
 	}
 	else if(pixelProcessId == 7){
 		terrainPass() ;
+
+
 	}
 	else if (pixelProcessId == 10) { //draw airplane
 		//vec4 texel = texture(airplane_texture, f_uv.xy);
@@ -88,7 +107,11 @@ void main(){
 		vec3 ks = vec3(1.0, 1.0, 1.0);
 		float shininess = 32.0;
 		
-		fragColor = blinnPhong(texel, ka, kd, ks, shininess); //texel改成用texture取來就會是正常的blinn phong
+		vec4 color = blinnPhong(texel, ka, kd, ks, shininess);
+		color = blinnPhong(texel, ka, kd, ks, shininess); // texel改成用texture取來就會是正常的blinn phong
+		color = withFog(color);
+		color = gammaCorrection(color);
+		fragColor = color;
 	}
 	else if (pixelProcessId == 11) { //draw rock
 		//vec4 texel = texture(airplane_texture, f_uv.xy);
@@ -100,7 +123,11 @@ void main(){
 		vec3 ks = vec3(1.0, 1.0, 1.0);
 		float shininess = 32.0;
 
-		fragColor = blinnPhong(texel, ka, kd, ks, shininess); // texel改成用texture取來就會是正常的blinn phong
+		vec4 color = blinnPhong(texel, ka, kd, ks, shininess);
+		color = blinnPhong(texel, ka, kd, ks, shininess); // texel改成用texture取來就會是正常的blinn phong
+		color = withFog(color);
+		color = gammaCorrection(color);
+		fragColor = color;
 	}
 	else if (pixelProcessId == 12) { //draw grass and building
 		vec4 texel = vec4(1.0, 0.0, 0.0, 1.0);
@@ -109,9 +136,11 @@ void main(){
 		vec3 ks = vec3(0.0, 0.0, 0.0);
 		float shininess = 1.0;
 
-		fragColor = blinnPhong(texel, ka, kd, ks, shininess); // texel改成用texture取來就會是正常的blinn phong
+		vec4 color = blinnPhong(texel, ka, kd, ks, shininess);
+		color = blinnPhong(texel, ka, kd, ks, shininess); // texel改成用texture取來就會是正常的blinn phong
+		color = withFog(color);
+		color = gammaCorrection(color);
+		fragColor = color;
 	}
-	else{
-		pureColor() ;
-	}
+	
 }
