@@ -1,17 +1,24 @@
-﻿  main.cpp
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\terrain\MyTerrainData.h(104,10): warning C4244: '正在初始化': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\main.cpp(1197,91): warning C4244: '引數': 將 'double' 轉換為 'const int'，由於類型不同，可能導致資料遺失
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\main.cpp(1197,77): warning C4244: '引數': 將 'double' 轉換為 'const int'，由於類型不同，可能導致資料遺失
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\main.cpp(1200,93): warning C4244: '引數': 將 'double' 轉換為 'const int'，由於類型不同，可能導致資料遺失
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\main.cpp(1200,79): warning C4244: '引數': 將 'double' 轉換為 'const int'，由於類型不同，可能導致資料遺失
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\main.cpp(1203,92): warning C4244: '引數': 將 'double' 轉換為 'const int'，由於類型不同，可能導致資料遺失
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\main.cpp(1203,78): warning C4244: '引數': 將 'double' 轉換為 'const int'，由於類型不同，可能導致資料遺失
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\main.cpp(1206,94): warning C4244: '引數': 將 'double' 轉換為 'const int'，由於類型不同，可能導致資料遺失
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\main.cpp(1206,80): warning C4244: '引數': 將 'double' 轉換為 'const int'，由於類型不同，可能導致資料遺失
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\main.cpp(1213,34): warning C4244: '引數': 將 'double' 轉換為 'const int'，由於類型不同，可能導致資料遺失
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\main.cpp(1213,31): warning C4244: '引數': 將 'double' 轉換為 'const int'，由於類型不同，可能導致資料遺失
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\main.cpp(1278,77): warning C4305: '引數': 從 'double' 轉換為 'const float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\main.cpp(1282,36): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
-C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\main.cpp(1282,36): warning C4267: '正在初始化': 將 'size_t' 轉換為 'const int'，資料可能遺失
-MSVCRTD.lib(initializers.obj) : warning LNK4098: 預設的程式庫 'msvcrt.lib' 與其他使用的程式庫衝突，請使用 /NODEFAULTLIB:library
+﻿  MyCameraManager.cpp
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(19,40): warning C4305: '=': 從 'double' 轉換為 'float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(46,43): warning C4244: '引數': 將 'const int' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(46,40): warning C4244: '引數': 將 'const int' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(50,43): warning C4244: '引數': 將 'const int' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(50,40): warning C4244: '引數': 將 'const int' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(55,45): warning C4244: '引數': 將 'const int' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(55,42): warning C4244: '引數': 將 'const int' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(58,45): warning C4244: '引數': 將 'const int' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(58,42): warning C4244: '引數': 將 'const int' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(62,41): warning C4244: '引數': 將 'const int' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(62,38): warning C4244: '引數': 將 'const int' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(65,40): warning C4244: '引數': 將 'const double' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(81,41): warning C4305: '=': 從 'double' 轉換為 'float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(84,42): warning C4305: '=': 從 'double' 轉換為 'float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(124,66): warning C4305: '引數': 從 'double' 轉換為 'const float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(127,67): warning C4305: '引數': 從 'double' 轉換為 'const float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(176,32): warning C4244: '=': 將 'double' 轉換為 'T'，由於類型不同，可能導致資料遺失
+          with
+          [
+              T=int
+          ]
+C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\Rendering_Framework\src\MyCameraManager.cpp(220,61): warning C4305: 'return': 從 'double' 轉換為 'float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
   Rendering_Framework.vcxproj -> C:\Users\kowal\OneDrive\清大上課用總資料夾\大二上\繪圖程式設計\homework\Final作業\GPA_2022_final_framework\x64\Debug\Rendering_Framework.exe
