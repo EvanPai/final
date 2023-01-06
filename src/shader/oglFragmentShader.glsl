@@ -130,7 +130,7 @@ void main(){
 		fragColor = color;
 	}
 	else if (pixelProcessId == 12) { //draw grass and building
-		vec4 texel = vec4(1.0, 0.0, 0.0, 1.0);
+		vec4 texel = vec4(0.0, 1.0, 0.2, 1.0);
 		vec3 ka = texel.xyz;
 		vec3 kd = texel.xyz;
 		vec3 ks = vec3(0.0, 0.0, 0.0);
