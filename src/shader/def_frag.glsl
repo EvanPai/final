@@ -54,7 +54,7 @@ void blinnPhong() {
 	outColor += max(dot(N, L), 0.0) * fragColor * ld * (1.0 - shadow);
 
 	//specular
-	float spec = pow(max(dot(N, H), 0.0), shininess);
+	float spec = max(pow(dot(N, H), shininess), 0.0);
 	outColor += ls * vec4(ks, 1.0) * spec + ls * fragColor * spec * (1.0 - shadow);
 
 	fragColor = outColor;
